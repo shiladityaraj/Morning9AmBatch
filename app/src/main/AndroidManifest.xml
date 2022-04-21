@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MorningBatchProject">
         <activity
-            android:name=".ThirdActivity"
+            android:name=".activity.ThirdActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".activity.SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

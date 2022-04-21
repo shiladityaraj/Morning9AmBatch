@@ -1,8 +1,10 @@
-package s.d.morningbatchproject;
+package s.d.morningbatchproject.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import s.d.morningbatchproject.R;
 
 public class SecondActivity extends AppCompatActivity {
 
