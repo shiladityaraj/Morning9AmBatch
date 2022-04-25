@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MorningBatchProject">
         <activity
+            android:name=".Adapter.NavAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment.ProfileFragment"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment.HomeFragment"
+            android:exported="false" />
+        <activity
             android:name=".Fragment.SecondFragment"
             android:exported="false" />
         <activity

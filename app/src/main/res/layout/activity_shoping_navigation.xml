@@ -23,13 +23,23 @@
         app:headerLayout="@layout/nav_header_shoping_navigation"
         >
 
-        <ListView
+<!--        <ListView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_marginTop="210dp"-->
+<!--            android:id="@+id/mylist"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--        </ListView>-->
+
+
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_marginTop="210dp"
-            android:id="@+id/mylist"
+            android:id="@+id/nav_recyclerview"
+
             android:layout_height="match_parent">
 
-        </ListView>
+        </androidx.recyclerview.widget.RecyclerView>
 
 
     </com.google.android.material.navigation.NavigationView>

@@ -8,7 +8,10 @@
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_fragment.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_home_fragment.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/layout/activity_nav_adapter.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_profile_fragment.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/layout/activity_second.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/layout/activity_second_fragment.xml" value="0.17604166666666668" />
         <entry key="app/src/main/res/layout/activity_shoping_navigation.xml" value="0.22" />
