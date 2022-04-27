@@ -44,7 +44,7 @@ public class ShopingNavigationActivity extends AppCompatActivity {
         RecyclerView mRecyclerView=findViewById(R.id.nav_recyclerview);
         mLayoutManager=new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(new NavAdapter(ShopingNavigationActivity.this));
+        mRecyclerView.setAdapter(new NavAdapter(ShopingNavigationActivity.this,drawerLayout));
 
 
 
@@ -88,6 +88,9 @@ public class ShopingNavigationActivity extends AppCompatActivity {
     }
 
 
-
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main_drawer,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 }

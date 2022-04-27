@@ -3,6 +3,7 @@ package s.d.morningbatchproject.Adapter;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import s.d.morningbatchproject.Fragment.HomeFragment;
+import s.d.morningbatchproject.Fragment.ProfileFragment;
 import s.d.morningbatchproject.R;
 
 public class NavAdapter extends RecyclerView.Adapter<NavAdapter.ViewHolder> {
@@ -25,9 +27,11 @@ public class NavAdapter extends RecyclerView.Adapter<NavAdapter.ViewHolder> {
     Integer img[]={R.drawable.ic_home,R.drawable.ic_profile,R.drawable.ic_product,R.drawable.ic_payment,R.drawable.ic_login,R.drawable.ic_logout};
 
     Context context;
+    DrawerLayout drawerLayout;
 
-    public NavAdapter(Context context) {
+    public NavAdapter(Context context, DrawerLayout drawerLayout) {
         this.context = context;
+        this.drawerLayout = drawerLayout;
     }
 
     @NonNull
@@ -44,15 +48,37 @@ public class NavAdapter extends RecyclerView.Adapter<NavAdapter.ViewHolder> {
 
         holder.imageView.setImageResource(img[position]);
         holder.tv.setText(str[position]);
+
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((FragmentActivity)context).
-                        getSupportFragmentManager().
-                        beginTransaction().
-                        replace(R.id.mainlayout,
-                                new HomeFragment()).
-                        commit();
+
+                if (holder.getAdapterPosition()==0)
+                {
+                    ((FragmentActivity)context).
+                            getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.mainlayout,
+                                    new HomeFragment()).
+                            commit();
+
+                    drawerLayout.closeDrawers();
+
+                }
+
+                else if (holder.getAdapterPosition()==1)
+                {
+                    ((FragmentActivity)context).
+                            getSupportFragmentManager().
+                            beginTransaction().
+                            replace(R.id.mainlayout,
+                                    new ProfileFragment()).
+                            commit();
+                    drawerLayout.closeDrawers();
+
+                }
+
 
 
 

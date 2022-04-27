@@ -9,31 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MorningBatchProject">
-        <activity
-            android:name=".Adapter.NavAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".Fragment.ProfileFragment"
-            android:exported="false" />
-        <activity
-            android:name=".Fragment.HomeFragment"
-            android:exported="false" />
-        <activity
-            android:name=".Fragment.SecondFragment"
-            android:exported="false" />
-        <activity
-            android:name=".Fragment.firstFragment"
-            android:exported="false" />
+
+
         <activity
             android:name=".Fragment.ShopingNavigationActivity"
             android:exported="true"
             android:label="@string/title_activity_shoping_navigation"
             android:theme="@style/Theme.MorningBatchProject.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activity.ThirdActivity"
