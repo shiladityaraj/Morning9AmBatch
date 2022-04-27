@@ -1,15 +1,19 @@
 package s.d.morningbatchproject.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
@@ -25,6 +29,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import s.d.morningbatchproject.Adapter.NavAdapter;
 import s.d.morningbatchproject.R;
+import s.d.morningbatchproject.activity.MainActivity;
+import s.d.morningbatchproject.activity.SecondActivity;
 import s.d.morningbatchproject.databinding.ActivityShopingNavigationBinding;
 
 public class ShopingNavigationActivity extends AppCompatActivity {
@@ -38,6 +44,7 @@ public class ShopingNavigationActivity extends AppCompatActivity {
 
         DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
         Toolbar toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle  actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         actionBarDrawerToggle.syncState();
@@ -90,7 +97,26 @@ public class ShopingNavigationActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main_drawer,menu);
-        return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.nav_menu,menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.home:
+                Toast.makeText(this, "HOME", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.settings:
+                Toast.makeText(this, "Setings", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.update:
+                Intent i=new Intent(ShopingNavigationActivity.this, SecondActivity.class);
+                startActivity(i);
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
