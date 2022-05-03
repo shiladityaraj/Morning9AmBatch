@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -33,25 +34,37 @@ import s.d.morningbatchproject.activity.MainActivity;
 import s.d.morningbatchproject.activity.SecondActivity;
 import s.d.morningbatchproject.databinding.ActivityShopingNavigationBinding;
 
-public class ShopingNavigationActivity extends AppCompatActivity {
+public class ShopingNavigationActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 //    String str[]={"Home","Profile","Product","Payment","Login","Logout"};
     RecyclerView.LayoutManager mLayoutManager;
+    DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoping_navigation);
 
-        DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
+        drawerLayout=findViewById(R.id.drawer_layout);
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle  actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         actionBarDrawerToggle.syncState();
-        RecyclerView mRecyclerView=findViewById(R.id.nav_recyclerview);
-        mLayoutManager=new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(new NavAdapter(ShopingNavigationActivity.this,drawerLayout));
+        NavigationView navigationView=findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
+
+
+
+
+
+
+
+//        RecyclerView mRecyclerView=findViewById(R.id.nav_recyclerview);
+//        mLayoutManager=new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+//        mRecyclerView.setLayoutManager(mLayoutManager);
+//        mRecyclerView.setAdapter(new NavAdapter(ShopingNavigationActivity.this,drawerLayout));
 
 
 
@@ -95,6 +108,10 @@ public class ShopingNavigationActivity extends AppCompatActivity {
     }
 
 
+
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.nav_menu,menu);
@@ -116,7 +133,34 @@ public class ShopingNavigationActivity extends AppCompatActivity {
                 Intent i=new Intent(ShopingNavigationActivity.this, SecondActivity.class);
                 startActivity(i);
 
+
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId())
+        {
+            case R.id.home:
+                FragmentManager fm=getSupportFragmentManager();
+                FragmentTransaction ft=fm.beginTransaction();
+                ft.replace(R.id.mainlayout, new HomeFragment());
+                ft.commit();
+                drawerLayout.closeDrawers();
+
+                break;
+            case R.id.settings:
+                FragmentManager fm1=getSupportFragmentManager();
+                FragmentTransaction ft1=fm1.beginTransaction();
+                ft1.replace(R.id.mainlayout, new ProfileFragment());
+                ft1.commit();
+                drawerLayout.closeDrawers();
+                break;
+        }
+
+        return false;
     }
 }

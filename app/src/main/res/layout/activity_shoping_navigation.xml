@@ -21,6 +21,7 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_shoping_navigation"
+        app:menu="@menu/optionmenu"
         >
 
 <!--        <ListView-->
@@ -32,14 +33,14 @@
 <!--        </ListView>-->
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_marginTop="210dp"
-            android:id="@+id/nav_recyclerview"
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_marginTop="210dp"-->
+<!--            android:id="@+id/nav_recyclerview"-->
 
-            android:layout_height="match_parent">
+<!--            android:layout_height="match_parent">-->
 
-        </androidx.recyclerview.widget.RecyclerView>
+<!--        </androidx.recyclerview.widget.RecyclerView>-->
 
 
     </com.google.android.material.navigation.NavigationView>
