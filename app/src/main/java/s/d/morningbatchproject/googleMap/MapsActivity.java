@@ -18,7 +18,8 @@ import s.d.morningbatchproject.R;
 import s.d.morningbatchproject.databinding.ActivityMapsBinding;
 
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity
+        implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
@@ -53,8 +54,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         mMap.setMyLocationEnabled(true);
 
-        LatLng l1=new LatLng(23.2526,77.4652);
-        mMap.addMarker(new MarkerOptions().position(l1).title("Saksham digital technology"));
+        LatLng l1=new
+                LatLng(23.2526,
+                77.4652);
+        mMap.addMarker(new MarkerOptions()
+                .position(l1)
+                .title("Saksham digital technology"));
 
 
 

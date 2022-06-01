@@ -5,6 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,7 @@ import s.d.morningbatchproject.R;
 public class ImageContainActivity extends AppCompatActivity {
     private ViewPager2 viewPager2;
     private Handler sliderHandler = new Handler();
+    ImageView imageView1,imageView2,imageView3,imageView4,imageView5,imageView6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,23 @@ public class ImageContainActivity extends AppCompatActivity {
         sliderItems.add(new SliderItems(R.drawable.ic_product));
         sliderItems.add(new SliderItems(R.drawable.ic_profile));
 
+        imageView1=findViewById(R.id.image1);
+        imageView2=findViewById(R.id.image2);
+        imageView3=findViewById(R.id.image3);
+        imageView4=findViewById(R.id.image4);
+        imageView5=findViewById(R.id.image5);
+        imageView6=findViewById(R.id.image6);
+
+
+
         viewPager2.setAdapter(new SliderImageAdapter(sliderItems,viewPager2));
+
+        imageView1.setImageResource(R.drawable.selectedimage);
+        imageView2.setImageResource(R.drawable.unselectedimage);
+        imageView3.setImageResource(R.drawable.unselectedimage);
+        imageView4.setImageResource(R.drawable.unselectedimage);
+        imageView5.setImageResource(R.drawable.unselectedimage);
+        imageView6.setImageResource(R.drawable.unselectedimage);
 
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -38,8 +56,65 @@ public class ImageContainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
+                if(position==0)
+                {
+                    imageView1.setImageResource(R.drawable.selectedimage);
+                    imageView2.setImageResource(R.drawable.unselectedimage);
+                    imageView3.setImageResource(R.drawable.unselectedimage);
+                    imageView4.setImageResource(R.drawable.unselectedimage);
+                    imageView5.setImageResource(R.drawable.unselectedimage);
+                    imageView6.setImageResource(R.drawable.unselectedimage);
+                }
+                else if (position==1)
+                {
+                    imageView1.setImageResource(R.drawable.unselectedimage);
+                    imageView2.setImageResource(R.drawable.selectedimage);
+                    imageView3.setImageResource(R.drawable.unselectedimage);
+                    imageView4.setImageResource(R.drawable.unselectedimage);
+                    imageView5.setImageResource(R.drawable.unselectedimage);
+                    imageView6.setImageResource(R.drawable.unselectedimage);
+                }
+                else if (position==2)
+                {
+                    imageView1.setImageResource(R.drawable.unselectedimage);
+                    imageView2.setImageResource(R.drawable.unselectedimage);
+                    imageView3.setImageResource(R.drawable.selectedimage);
+                    imageView4.setImageResource(R.drawable.unselectedimage);
+                    imageView5.setImageResource(R.drawable.unselectedimage);
+                    imageView6.setImageResource(R.drawable.unselectedimage);
+                }
+                else if (position==3)
+                {
+                    imageView1.setImageResource(R.drawable.unselectedimage);
+                    imageView2.setImageResource(R.drawable.unselectedimage);
+                    imageView3.setImageResource(R.drawable.unselectedimage);
+                    imageView4.setImageResource(R.drawable.selectedimage);
+                    imageView5.setImageResource(R.drawable.unselectedimage);
+                    imageView6.setImageResource(R.drawable.unselectedimage);
+                }
+                else if (position==4)
+                {
+                    imageView1.setImageResource(R.drawable.unselectedimage);
+                    imageView2.setImageResource(R.drawable.unselectedimage);
+                    imageView3.setImageResource(R.drawable.unselectedimage);
+                    imageView4.setImageResource(R.drawable.unselectedimage);
+                    imageView5.setImageResource(R.drawable.unselectedimage);
+                    imageView6.setImageResource(R.drawable.selectedimage);
+                }
+                else if (position==5)
+                {
+                    imageView1.setImageResource(R.drawable.selectedimage);
+                    imageView2.setImageResource(R.drawable.unselectedimage);
+                    imageView3.setImageResource(R.drawable.unselectedimage);
+                    imageView4.setImageResource(R.drawable.unselectedimage);
+                    imageView5.setImageResource(R.drawable.unselectedimage);
+                    imageView6.setImageResource(R.drawable.unselectedimage);
+                }
                 sliderHandler.removeCallbacks(sliderRunnable);
                 sliderHandler.postDelayed(sliderRunnable, 2000);
+
+
+                
 
 
 

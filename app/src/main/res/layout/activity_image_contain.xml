@@ -6,13 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".imageslider.ImageContainActivity">
 
-
-
     <androidx.viewpager2.widget.ViewPager2
-        android:layout_width="match_parent"
         android:id="@+id/viewpager2_new"
+        android:layout_width="match_parent"
         android:layout_height="200dp">
 
     </androidx.viewpager2.widget.ViewPager2>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_below="@+id/viewpager2_new"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:src="@drawable/selectedimage"
+            android:id="@+id/image1"
+            android:layout_height="30dp">
+        </ImageView>
+        <ImageView
+            android:layout_width="30dp"
+            android:src="@drawable/unselectedimage"
+            android:id="@+id/image2"
+            android:layout_height="30dp">
+        </ImageView>
+        <ImageView
+            android:layout_width="30dp"
+            android:src="@drawable/unselectedimage"
+            android:id="@+id/image3"
+            android:layout_height="30dp">
+        </ImageView>
+        <ImageView
+            android:layout_width="30dp"
+            android:src="@drawable/unselectedimage"
+            android:id="@+id/image4"
+            android:layout_height="30dp">
+        </ImageView>
+        <ImageView
+            android:layout_width="30dp"
+            android:src="@drawable/unselectedimage"
+            android:id="@+id/image5"
+            android:layout_height="30dp">
+        </ImageView>
+        <ImageView
+            android:layout_width="30dp"
+            android:src="@drawable/unselectedimage"
+            android:id="@+id/image6"
+            android:layout_height="30dp">
+        </ImageView>
+
+    </LinearLayout>
+
 
 </RelativeLayout>
